@@ -3,5 +3,6 @@ go 1.21.4
 use (
 	./stepik_1.10
 	./stepik_1.11
+	./stepik_1.12
 	./stepik_1.13
 )
