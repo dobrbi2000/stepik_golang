@@ -3,14 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	var n int
-	fmt.Scan(&n)
-
-	for i := 0; *ii <= n; i++ {
-		i *= i
-		fmt.Println(i)
+	var mas int = 50
+	//fmt.Scan(&mas)
+	for i := 1; i <= mas; i *= 2 {
+		fmt.Print(i, " ")
 	}
-
 }
 
 /*
