@@ -5,4 +5,5 @@ use (
 	./stepik_1.11
 	./stepik_1.12
 	./stepik_1.13
+	./stepik_2.5
 )
