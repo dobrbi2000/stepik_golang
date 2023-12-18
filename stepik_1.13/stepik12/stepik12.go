@@ -125,56 +125,57 @@ package main
 import "fmt"
 
 func isWinnableSequence(n int, a []int, b []int) string {
-start := -1
-end := -1
+	start := -1
+	end := -1
 
-for i := 0; i < n; i++ {
-if a[i] != b[i] {
-if start == -1 {
-start = i
-}
-end = i
-}
-}
+	for i := 0; i < n; i++ {
+		if a[i] != b[i] {
+			if start == -1 {
+				start = i
+			}
+			end = i
+		}
+	}
 
-if start == -1 && end == -1 {
-return "YES"
-}
+	if start == -1 && end == -1 {
+		return "YES"
+	}
 
-reverse := make([]int, end-start+1)
-copy(reverse, a[start:end+1])
-for i, j := 0, len(reverse)-1; i < j; i, j = i+1, j-1 {
-reverse[i], reverse[j] = reverse[j], reverse[i]
-}
+	reverse := make([]int, end-start+1)
+	copy(reverse, a[start:end+1])
+	for i, j := 0, len(reverse)-1; i < j; i, j = i+1, j-1 {
+		reverse[i], reverse[j] = reverse[j], reverse[i]
+	}
 
-for i := start; i <= end; i++ {
-a[i] = reverse[i-start]
-}
+	for i := start; i <= end; i++ {
+		a[i] = reverse[i-start]
+	}
 
-for i := 0; i < n; i++ {
-if a[i] != b[i] {
-return "NO"
-}
-}
+	for i := 0; i < n; i++ {
+		if a[i] != b[i] {
+			return "NO"
+		}
+	}
 
-return "YES"
+	return "YES"
 }
 
 func main() {
-var n int
-fmt.Scan(&n)
+	var n int
+	fmt.Scan(&n)
 
-a := make([]int, n)
-for i := 0; i < n; i++ {
-fmt.Scan(&a[i])
+	a := make([]int, n)
+	for i := 0; i < n; i++ {
+		fmt.Scan(&a[i])
+	}
+
+	b := make([]int, n)
+	for i := 0; i < n; i++ {
+		fmt.Scan(&b[i])
+	}
+
+	result := isWinnableSequence(n, a, b)
+	fmt.Println(result)
 }
 
-b := make([]int, n)
-for i := 0; i < n; i++ {
-fmt.Scan(&b[i])
-}
-
-result := isWinnableSequence(n, a, b)
-fmt.Println(result)
-}
-Пожалуйста, обратите внимание, что этот код проверяет, можно ли для последовательности `a` получить последовательность `b` путем однократной сортировки подпоследовательности.
+//Пожалуйста, обратите внимание, что этот код проверяет, можно ли для последовательности `a` получить последовательность `b` путем однократной сортировки подпоследовательности.
