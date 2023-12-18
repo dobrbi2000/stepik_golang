@@ -20,3 +20,28 @@ func main() {
 	fmt.Println(b.String())
 
 }
+
+/*
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+
+    var a string
+    fmt.Scan(&a)
+
+    for _, ch := range a {
+        if strings.Count(a, string(ch)) == 1 {
+            fmt.Print(string(ch))
+        }
+    }
+}
+
+
+
+
+*/
