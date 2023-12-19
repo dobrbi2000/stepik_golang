@@ -4,14 +4,15 @@ import "fmt"
 
 func main() {
 
-	var s string = "LItBeoFLcSGBOFQxMHoIuDDWcqcVgkcRoAeocXO"
-	//_, err := fmt.Scan(&s)
-	//if err != nil {
-	//	fmt.Println("invalid value")
-	//}
+	var s string
+	_, err := fmt.Scan(&s)
+	if err != nil {
+		fmt.Println("invalid value")
+	}
 	rtext := []rune(s)
 
 	fmt.Print(string(rtext[0]))
+
 	for i := 1; i < len(s); i++ {
 		fmt.Print("*", rtext[i])
 	}
