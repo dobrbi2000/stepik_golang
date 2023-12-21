@@ -1,35 +1,55 @@
+// package main
+
+// import (
+// 	"bufio"
+// 	"fmt"
+// 	"os"
+// 	"strconv"
+// 	"strings"
+// )
+
+// func main() {
+
+// 	text, _ := bufio.NewReader(os.Stdin).ReadString('\n')
+// 	text = strings.Trim(text, "\n")
+
+// 	text = strings.Replace(text, " ", "", -1)
+// 	text = strings.Replace(text, ",", ".", -1)
+// 	items := strings.Split(text, ";")
+// 	if len(items) != 2 {
+// 		panic("invalid format, must be two values!")
+// 	}
+
+// 	num1, err := strconv.ParseFloat(items[0], 64) // из стринга в флоат64
+// 	if err != nil {
+// 		panic(err)
+// 	}
+// 	num2, err := strconv.ParseFloat(items[1], 64)
+// 	if err != nil {
+// 		panic(err)
+// 	}
+
+// 	fmt.Printf("%.4f\n", num1/num2)
+
+// }
+
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"strconv"
-	"strings"
-)
+import "fmt"
+
+func recieveFunc(f func(a, b int) int) int {
+	var a1, a2 int
+	a1 = 100
+	a2 = 150
+	return f(a1, a2)
+}
+
+func add(a2, b2 int) int {
+	return a2 + b2
+}
 
 func main() {
-
-	text, _ := bufio.NewReader(os.Stdin).ReadString('\n')
-	text = strings.Trim(text, "\n")
-
-	text = strings.Replace(text, " ", "", -1)
-	text = strings.Replace(text, ",", ".", -1)
-	items := strings.Split(text, ";")
-	if len(items) != 2 {
-		panic("invalid format, must be two values!")
-	}
-
-	num1, err := strconv.ParseFloat(items[0], 64) // из стринга в флоат64
-	if err != nil {
-		panic(err)
-	}
-	num2, err := strconv.ParseFloat(items[1], 64)
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Printf("%.4f\n", num1/num2)
+	fmt.Println(recieveFunc(add))
 
 }
 
