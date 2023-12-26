@@ -9,6 +9,7 @@ use (
 	./stepik_2.7
 	./stepik_3.1
 	./stepik_3.2
+	./stepik_3.4
 	
 	
 )
