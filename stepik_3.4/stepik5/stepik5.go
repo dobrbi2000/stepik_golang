@@ -37,7 +37,7 @@ func main() {
 
 	var numberRating int
 	for _, student := range group.Students {
-		numberRating += len(student.Rating)
+		numberRating += len(student.Rating) // 1, 2, 3 = 3
 	}
 
 	result := Result{
