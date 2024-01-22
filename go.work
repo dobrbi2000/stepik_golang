@@ -11,6 +11,7 @@ use (
 	./stepik_3.2
 	./stepik_3.4
 	./stepik_3.8
+	./stepik_4
 	
 	
 )
