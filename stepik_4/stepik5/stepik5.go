@@ -9,10 +9,10 @@ import (
 
 func main() {
 
-	var name string
-	var age string
+	var name string = "alex"
+	var age string = "10"
 
-	fmt.Scanln(&name, &age)
+	//fmt.Scanln(&name, &age)
 
 	baseUrl := ("http://127.0.0.1:8080/hello")
 
